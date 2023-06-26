@@ -1,0 +1,23 @@
+[flake8]
+max-line-length = 80
+inline-quotes = single
+exclude =
+    tests/,
+    */migrations/,
+    /venv/,
+    */venv/,
+    test*.py,
+    env/,
+    */env/
+ignore =
+    # Line break occurred before a binary operator
+    W503,
+    # Missing docstrings
+    D100,D101,D102,D103,D104,D105,D106,D107,
+    # First line should be in imperative mood
+    D401
+per-file-ignores =
+    # Line too long
+    */settings.py:E501
+    # Double quotes found but single quotes preferred
+    ./manage.py:Q000
