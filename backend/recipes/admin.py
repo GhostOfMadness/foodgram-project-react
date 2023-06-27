@@ -6,6 +6,7 @@ from django.contrib import admin
 
 from .models import Ingredient, Recipe, RecipeIngredient, RecipeTag, Tag
 
+
 load_dotenv()
 
 ADMIN_INLINE_EXTRA = int(os.getenv('ADMIN_INLINE_LEN', default=1))
@@ -57,7 +58,6 @@ class RecipeAdmin(admin.ModelAdmin):
         'author',
     )
     list_filter = ('name', 'author', 'tags')
-    filter_horizontal = ('tags', 'ingredients')
     fieldsets = [
         (
             None,

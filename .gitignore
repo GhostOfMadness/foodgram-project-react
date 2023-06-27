@@ -135,3 +135,4 @@ dmypy.json
 backend/backend_static/
 media/
 *.DS_Store
+data/*.py

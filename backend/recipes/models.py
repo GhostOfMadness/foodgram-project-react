@@ -9,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 from .validators import HexColorValidator
 
+
 load_dotenv()
 
 STR_MAX_LENGTH = int(os.getenv('MODEL_STR_MAX_LENGTH', default=30))
