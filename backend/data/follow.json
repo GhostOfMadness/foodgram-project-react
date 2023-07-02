@@ -1,0 +1,82 @@
+[
+    {
+        "follower_username": "gordon_ramsay",
+        "following_username": "marcus_samuelsson"
+    },
+    {
+        "follower_username": "gordon_ramsay",
+        "following_username": "david_chang"
+    },
+    {
+        "follower_username": "gordon_ramsay",
+        "following_username": "jamie_oliver"
+    },
+    {
+        "follower_username": "sunny_anderson",
+        "following_username": "guy_fieri"
+    },
+    {
+        "follower_username": "sunny_anderson",
+        "following_username": "matt_basile"
+    },
+    {
+        "follower_username": "sunny_anderson",
+        "following_username": "jamie_oliver"
+    },
+    {
+        "follower_username": "marcus_samuelsson",
+        "following_username": "cat_cora"
+    },
+    {
+        "follower_username": "marcus_samuelsson",
+        "following_username": "maneet_chauhan"
+    },
+    {
+        "follower_username": "guy_fieri",
+        "following_username": "bobby_flay"
+    },
+    {
+        "follower_username": "guy_fieri",
+        "following_username": "sunny_anderson"
+    },
+    {
+        "follower_username": "cat_cora",
+        "following_username": "jamie_oliver"
+    },
+    {
+        "follower_username": "cat_cora",
+        "following_username": "marcus_samuelsson"
+    },
+    {
+        "follower_username": "matt_basile",
+        "following_username": "david_chang"
+    },
+    {
+        "follower_username": "matt_basile",
+        "following_username": "guy_fieri"
+    },
+    {
+        "follower_username": "maneet_chauhan",
+        "following_username": "jamie_oliver"
+    },
+    {
+        "follower_username": "david_chang",
+        "following_username": "cat_cora"
+    },
+    {
+        "follower_username": "bobby_flay",
+        "following_username": "marcus_samuelsson"
+    },
+    {
+        "follower_username": "jamie_oliver",
+        "following_username": "sunny_anderson"
+    },
+    {
+        "follower_username": "jamie_oliver",
+        "following_username": "matt_basile"
+    },
+    {
+        "follower_username": "jamie_oliver",
+        "following_username": "bobby_flay"
+    }
+]

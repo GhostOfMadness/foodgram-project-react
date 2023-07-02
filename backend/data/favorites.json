@@ -1,0 +1,106 @@
+[
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Бананы в шоколаде"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Постные медовые кексы"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Творожная запеканка"
+    },
+    {
+        "user_username": "sunny_anderson",
+        "recipe_name": "Галета с цукини и томатами"
+    },
+    {
+        "user_username": "sunny_anderson",
+        "recipe_name": "Бананы в шоколаде"
+    },
+    {
+        "user_username": "marcus_samuelsson",
+        "recipe_name": "Морковные котлеты"
+    },
+    {
+        "user_username": "marcus_samuelsson",
+        "recipe_name": "Запеченные яблоки с рикоттой"
+    },
+    {
+        "user_username": "marcus_samuelsson",
+        "recipe_name": "Шоколадные маршмеллоу"
+    },
+    {
+        "user_username": "guy_fieri",
+        "recipe_name": "Сырники"
+    },
+    {
+        "user_username": "guy_fieri",
+        "recipe_name": "Галета с цукини и томатами"
+    },
+    {
+        "user_username": "guy_fieri",
+        "recipe_name": "Запеченные яблоки с рикоттой"
+    },
+    {
+        "user_username": "cat_cora",
+        "recipe_name": "Шоколадная гранола"
+    },
+    {
+        "user_username": "matt_basile",
+        "recipe_name": "Морковные котлеты"
+    },
+    {
+        "user_username": "maneet_chauhan",
+        "recipe_name": "Галета с цукини и томатами"
+    },
+    {
+        "user_username": "maneet_chauhan",
+        "recipe_name": "Бананы в шоколаде"
+    },
+    {
+        "user_username": "david_chang",
+        "recipe_name": "Творожная запеканка"
+    },
+    {
+        "user_username": "bobby_flay",
+        "recipe_name": "Галета с цукини и томатами"
+    },
+    {
+        "user_username": "bobby_flay",
+        "recipe_name": "Постные медовые кексы"
+    },
+    {
+        "user_username": "jamie_oliver",
+        "recipe_name": "Морковные котлеты"
+    },
+    {
+        "user_username": "jamie_oliver",
+        "recipe_name": "Сырники"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Овсяное печенье с изюмом"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Печенье \"Земелах\""
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Овсяный пирог с какао и бананами"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Пирог \"Сметанник\""
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "ПП брауни"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "ПП синнабоны"
+    }
+]

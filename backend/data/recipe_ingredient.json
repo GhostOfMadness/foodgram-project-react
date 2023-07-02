@@ -1,0 +1,577 @@
+[
+    {
+        "amount": "500",
+        "recipe_name": "Морковные котлеты",
+        "ingredient_name": "морковь крупная"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Морковные котлеты",
+        "ingredient_name": "вода"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Морковные котлеты",
+        "ingredient_name": "манная крупа"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Морковные котлеты",
+        "ingredient_name": "соль"
+    },
+    {
+        "amount": "3",
+        "recipe_name": "Морковные котлеты",
+        "ingredient_name": "прованские травы"
+    },
+    {
+        "amount": "10",
+        "recipe_name": "Морковные котлеты",
+        "ingredient_name": "растительное масло"
+    },
+    {
+        "amount": "1000",
+        "recipe_name": "Сырники",
+        "ingredient_name": "творог 5%"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Сырники",
+        "ingredient_name": "манная крупа"
+    },
+    {
+        "amount": "70",
+        "recipe_name": "Сырники",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "40",
+        "recipe_name": "Сырники",
+        "ingredient_name": "сахарная пудра"
+    },
+    {
+        "amount": "2",
+        "recipe_name": "Сырники",
+        "ingredient_name": "соль"
+    },
+    {
+        "amount": "140",
+        "recipe_name": "Творожная запеканка",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "80",
+        "recipe_name": "Творожная запеканка",
+        "ingredient_name": "сахарная пудра"
+    },
+    {
+        "amount": "85",
+        "recipe_name": "Творожная запеканка",
+        "ingredient_name": "манная крупа"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Творожная запеканка",
+        "ingredient_name": "молоко 3,6%"
+    },
+    {
+        "amount": "1000",
+        "recipe_name": "Творожная запеканка",
+        "ingredient_name": "творог 5%"
+    },
+    {
+        "amount": "60",
+        "recipe_name": "Творожная запеканка",
+        "ingredient_name": "сметана 18%"
+    },
+    {
+        "amount": "250",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "пшеничная мука"
+    },
+    {
+        "amount": "80",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "растительное масло"
+    },
+    {
+        "amount": "6",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "разрыхлитель"
+    },
+    {
+        "amount": "8",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "сахар"
+    },
+    {
+        "amount": "4",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "соль"
+    },
+    {
+        "amount": "80",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "сметана 18%"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "помидоры"
+    },
+    {
+        "amount": "150",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "цукини"
+    },
+    {
+        "amount": "30",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "творожный сыр"
+    },
+    {
+        "amount": "3",
+        "recipe_name": "Галета с цукини и томатами",
+        "ingredient_name": "прованские травы"
+    },
+    {
+        "amount": "450",
+        "recipe_name": "Бананы в шоколаде",
+        "ingredient_name": "бананы"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Бананы в шоколаде",
+        "ingredient_name": "шоколад черный горький 70%"
+    },
+    {
+        "amount": "30",
+        "recipe_name": "Бананы в шоколаде",
+        "ingredient_name": "кокосовая стружка"
+    },
+    {
+        "amount": "180",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "рисовая мука"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "разрыхлитель"
+    },
+    {
+        "amount": "3",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "соль"
+    },
+    {
+        "amount": "140",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "200",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "бананы"
+    },
+    {
+        "amount": "115",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "йогурт натуральный"
+    },
+    {
+        "amount": "80",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "заменитель сахара стевия"
+    },
+    {
+        "amount": "7",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "лимонный сок"
+    },
+    {
+        "amount": "40",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "клюква"
+    },
+    {
+        "amount": "10",
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "ingredient_name": "крахмал"
+    },
+    {
+        "amount": "250",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "овсяные хлопья"
+    },
+    {
+        "amount": "40",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "кокосовая стружка"
+    },
+    {
+        "amount": "50",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "фундук"
+    },
+    {
+        "amount": "50",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "орехи пекан"
+    },
+    {
+        "amount": "90",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "финики"
+    },
+    {
+        "amount": "200",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "бананы"
+    },
+    {
+        "amount": "50",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "вода"
+    },
+    {
+        "amount": "40",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "арахисовая паста"
+    },
+    {
+        "amount": "30",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "какао-порошок обезжиренный"
+    },
+    {
+        "amount": "2",
+        "recipe_name": "Шоколадная гранола",
+        "ingredient_name": "корица молотая"
+    },
+    {
+        "amount": "4",
+        "recipe_name": "Запеченные яблоки с рикоттой",
+        "ingredient_name": "яблоки красные"
+    },
+    {
+        "amount": "40",
+        "recipe_name": "Запеченные яблоки с рикоттой",
+        "ingredient_name": "рикотта"
+    },
+    {
+        "amount": "30",
+        "recipe_name": "Запеченные яблоки с рикоттой",
+        "ingredient_name": "кедровые орехи"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Запеченные яблоки с рикоттой",
+        "ingredient_name": "корица молотая"
+    },
+    {
+        "amount": "1",
+        "recipe_name": "Запеченные яблоки с рикоттой",
+        "ingredient_name": "сироп топинамбура"
+    },
+    {
+        "amount": "90",
+        "recipe_name": "Шоколадные маршмеллоу",
+        "ingredient_name": "шоколад черный горький 70%"
+    },
+    {
+        "amount": "150",
+        "recipe_name": "Шоколадные маршмеллоу",
+        "ingredient_name": "вода"
+    },
+    {
+        "amount": "10",
+        "recipe_name": "Шоколадные маршмеллоу",
+        "ingredient_name": "желатин"
+    },
+    {
+        "amount": "220",
+        "recipe_name": "Шоколадные маршмеллоу",
+        "ingredient_name": "сахар"
+    },
+    {
+        "amount": "250",
+        "recipe_name": "Постные медовые кексы",
+        "ingredient_name": "вода"
+    },
+    {
+        "amount": "300",
+        "recipe_name": "Постные медовые кексы",
+        "ingredient_name": "пшеничная мука"
+    },
+    {
+        "amount": "40",
+        "recipe_name": "Постные медовые кексы",
+        "ingredient_name": "мед"
+    },
+    {
+        "amount": "60",
+        "recipe_name": "Постные медовые кексы",
+        "ingredient_name": "растительное масло"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Постные медовые кексы",
+        "ingredient_name": "разрыхлитель"
+    },
+    {
+        "amount": "80",
+        "recipe_name": "Постные медовые кексы",
+        "ingredient_name": "сахар"
+    },
+    {
+        "amount": "150",
+        "recipe_name": "Овсяное печенье с изюмом",
+        "ingredient_name": "овсяные хлопья"
+    },
+    {
+        "amount": "180",
+        "recipe_name": "Овсяное печенье с изюмом",
+        "ingredient_name": "кефир 2,5%"
+    },
+    {
+        "amount": "30",
+        "recipe_name": "Овсяное печенье с изюмом",
+        "ingredient_name": "изюм без косточек"
+    },
+    {
+        "amount": "30",
+        "recipe_name": "Овсяное печенье с изюмом",
+        "ingredient_name": "мед"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Овсяное печенье с изюмом",
+        "ingredient_name": "корица молотая"
+    },
+    {
+        "amount": "8",
+        "recipe_name": "Овсяное печенье с изюмом",
+        "ingredient_name": "сахар ванильный"
+    },
+    {
+        "amount": "70",
+        "recipe_name": "Печенье \"Земелах\"",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Печенье \"Земелах\"",
+        "ingredient_name": "сливочное масло"
+    },
+    {
+        "amount": "110",
+        "recipe_name": "Печенье \"Земелах\"",
+        "ingredient_name": "сахар"
+    },
+    {
+        "amount": "20",
+        "recipe_name": "Печенье \"Земелах\"",
+        "ingredient_name": "сметана 18%"
+    },
+    {
+        "amount": "250",
+        "recipe_name": "Печенье \"Земелах\"",
+        "ingredient_name": "пшеничная мука"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Печенье \"Земелах\"",
+        "ingredient_name": "разрыхлитель"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Печенье \"Земелах\"",
+        "ingredient_name": "корица молотая"
+    },
+    {
+        "amount": "120",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "овсяные хлопья"
+    },
+    {
+        "amount": "280",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "молоко 3,6%"
+    },
+    {
+        "amount": "300",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "бананы"
+    },
+    {
+        "amount": "20",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "заменитель сахара стевия"
+    },
+    {
+        "amount": "8",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "сахар ванильный"
+    },
+    {
+        "amount": "140",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "40",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "какао-порошок обезжиренный"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "разрыхлитель"
+    },
+    {
+        "amount": "3",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "соль"
+    },
+    {
+        "amount": "50",
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "ingredient_name": "шоколад черный горький 70%"
+    },
+    {
+        "amount": "250",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "пшеничная мука"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "молоко 3,6%"
+    },
+    {
+        "amount": "350",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "20",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "растительное масло"
+    },
+    {
+        "amount": "4",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "дрожжи домашние"
+    },
+    {
+        "amount": "20",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "сахар"
+    },
+    {
+        "amount": "2",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "сода"
+    },
+    {
+        "amount": "3",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "соль"
+    },
+    {
+        "amount": "700",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "сметана 18%"
+    },
+    {
+        "amount": "80",
+        "recipe_name": "Пирог \"Сметанник\"",
+        "ingredient_name": "сахарная пудра ванильная"
+    },
+    {
+        "amount": "210",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "150",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "бананы"
+    },
+    {
+        "amount": "70",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "рисовая мука"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "разрыхлитель"
+    },
+    {
+        "amount": "8",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "сахар ванильный"
+    },
+    {
+        "amount": "20",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "какао-порошок обезжиренный"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "молоко 3,6%"
+    },
+    {
+        "amount": "20",
+        "recipe_name": "ПП брауни",
+        "ingredient_name": "заменитель сахара стевия"
+    },
+    {
+        "amount": "70",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "яйца куриные"
+    },
+    {
+        "amount": "180",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "творог 5%"
+    },
+    {
+        "amount": "220",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "пшеничная мука цельнозерновая"
+    },
+    {
+        "amount": "100",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "кефир 2,5%"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "разрыхлитель"
+    },
+    {
+        "amount": "50",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "какао-порошок обезжиренный"
+    },
+    {
+        "amount": "5",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "корица молотая"
+    },
+    {
+        "amount": "15",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "вода"
+    },
+    {
+        "amount": "120",
+        "recipe_name": "ПП синнабоны",
+        "ingredient_name": "мед"
+    }
+]

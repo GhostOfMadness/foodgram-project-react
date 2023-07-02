@@ -18,38 +18,47 @@ User = get_user_model()
 
 
 class Tag(models.Model):
-    """The Tag model."""
+    """Модель тега."""
 
-    name = models.CharField(_('name'), max_length=200, unique=True)
+    name = models.CharField(_('Название'), max_length=200, unique=True)
     color = models.CharField(
-        _('color'),
+        _('HEX-цвет'),
         max_length=7,
         unique=True,
         validators=[HexColorValidator()],
     )
-    slug = models.SlugField(_('slug'), max_length=200, unique=True)
+    slug = models.SlugField(_('Слаг'), max_length=200, unique=True)
 
     class Meta:
         ordering = ['slug']
-        verbose_name = _('Tag')
-        verbose_name_plural = _('Tags')
+        verbose_name = _('Тег')
+        verbose_name_plural = _('Теги')
 
     def __str__(self) -> str:
         return self.slug[:STR_MAX_LENGTH]
 
 
 class Ingredient(models.Model):
-    """The Ingredient model."""
+    """Модель ингредиента."""
 
-    name = models.CharField(_('name'), max_length=200)
-    measurement_unit = models.CharField(_('measurement unit'), max_length=200)
+    name = models.CharField(_('Название'), max_length=200)
+    measurement_unit = models.CharField(
+        _('Единицы измерения'),
+        max_length=200,
+    )
 
     class Meta:
         ordering = ['name']
-        verbose_name = _('Ingredient')
-        verbose_name_plural = _('Ingredients')
+        verbose_name = _('Ингредиент')
+        verbose_name_plural = _('Ингредиенты')
         indexes = [
             models.Index(fields=['name'], name='ingredient_name_idx'),
+        ]
+        constraints = [
+            models.UniqueConstraint(
+                fields=('name', 'measurement_unit'),
+                name='unique_name_measurement_unit',
+            ),
         ]
 
     def __str__(self) -> str:
@@ -57,13 +66,13 @@ class Ingredient(models.Model):
 
 
 class Recipe(models.Model):
-    """The Recipe model."""
+    """Модель рецепта."""
 
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name='recipes',
-        verbose_name=_('author'),
+        verbose_name=_('Автор'),
     )
     tags = models.ManyToManyField(Tag, through='RecipeTag')
     ingredients = models.ManyToManyField(
@@ -72,16 +81,16 @@ class Recipe(models.Model):
     )
     image = models.ImageField(
         upload_to='recipes/images/',
-        verbose_name=_('image'),
+        verbose_name=_('Изображение'),
     )
-    name = models.CharField(_('name'), max_length=200)
-    text = models.TextField(_('description'))
+    name = models.CharField(_('Название'), max_length=200)
+    text = models.TextField(_('Описание'))
     cooking_time = models.PositiveSmallIntegerField(
-        _('cooking time (minutes)'),
+        _('Время приготовления (в минутах)'),
         validators=[
             MinValueValidator(
                 1,
-                _('Cooking time cannot be less than 1 minute.'),
+                _('Время приготовления не может быть меньше 1 минуты.'),
             ),
         ],
     )
@@ -89,8 +98,8 @@ class Recipe(models.Model):
 
     class Meta:
         ordering = ['-pub_date']
-        verbose_name = _('Recipe')
-        verbose_name_plural = _('Recipes')
+        verbose_name = _('Рецепт')
+        verbose_name_plural = _('Рецепты')
         indexes = [
             models.Index(fields=['name'], name='recipe_name_idx'),
         ]
@@ -100,24 +109,24 @@ class Recipe(models.Model):
 
 
 class RecipeIngredient(models.Model):
-    """Intermediary join table to pair recipe-ingredient."""
+    """Промежуточная таблица для пары рецепт-ингредиент."""
 
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
-        verbose_name=_('recipe'),
+        verbose_name=_('Рецепт'),
     )
     ingredient = models.ForeignKey(
         Ingredient,
         on_delete=models.CASCADE,
-        verbose_name=_('ingredient'),
+        verbose_name=_('Ингредиент'),
     )
     amount = models.PositiveSmallIntegerField(
-        _('amount'),
+        _('Количество'),
         validators=[
             MinValueValidator(
                 1,
-                _('Amount cannot be less than 1 measurement unit.'),
+                _('Количество не может быть меньше 1 единицы измерения.'),
             ),
         ],
     )
@@ -136,17 +145,17 @@ class RecipeIngredient(models.Model):
 
 
 class RecipeTag(models.Model):
-    """Intermediary join table to pair recipe-tag."""
+    """Промежуточная таблица для пары рецепт-тег."""
 
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
-        verbose_name=_('recipe'),
+        verbose_name=_('Рецепт'),
     )
     tag = models.ForeignKey(
         Tag,
         on_delete=models.CASCADE,
-        verbose_name=_('tag'),
+        verbose_name=_('Тег'),
     )
 
     class Meta:
@@ -163,19 +172,19 @@ class RecipeTag(models.Model):
 
 
 class ListModel(models.Model):
-    """The abstract model to store user-recipe pairs."""
+    """Абстрактная модель для пар пользователь-рецепт."""
 
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name='%(class)s_related',
-        verbose_name=_('user'),
+        verbose_name=_('Пользователь'),
     )
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
         related_name='%(class)s_related',
-        verbose_name=_('recipe'),
+        verbose_name=_('Рецепт'),
     )
 
     class Meta:
@@ -193,7 +202,7 @@ class ListModel(models.Model):
 
 
 class ShoppingCart(ListModel):
-    """The Shopping cart model."""
+    """Модель списка покупок."""
 
     class Meta(ListModel.Meta):
         verbose_name = _('Shopping cart')
@@ -201,7 +210,7 @@ class ShoppingCart(ListModel):
 
 
 class FavoritesList(ListModel):
-    """The Favourites model."""
+    """Модель списка избранного."""
 
     class Meta(ListModel.Meta):
         verbose_name = _('Favorites list')

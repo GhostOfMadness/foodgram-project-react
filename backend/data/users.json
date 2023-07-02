@@ -1,69 +1,59 @@
 [
     {
-        "id": "1",
         "username": "gordon_ramsay",
         "first_name": "Гордон",
         "last_name": "Рамзи",
         "email": "gordon_ramsay@foodgram.com"
     },
     {
-        "id": "2",
         "username": "sunny_anderson",
         "first_name": "Санни",
         "last_name": "Андерсон",
         "email": "sunny_anderson@foodgram.com"
     },
     {
-        "id": "3",
         "username": "marcus_samuelsson",
         "first_name": "Маркус",
         "last_name": "Самуэльсон",
         "email": "marcus_samuelsson@foodgram.com"
     },
     {
-        "id": "4",
         "username": "guy_fieri",
         "first_name": "Гай",
         "last_name": "Фиери",
         "email": "guy_fieri@foodgram.com"
     },
     {
-        "id": "5",
         "username": "cat_cora",
         "first_name": "Кэтрин",
         "last_name": "Кора",
         "email": "cat_cora@foodgram.com"
     },
     {
-        "id": "6",
         "username": "matt_basile",
         "first_name": "Мэттt",
         "last_name": "Базиле",
         "email": "matt_basile@foodgram.com"
     },
     {
-        "id": "7",
         "username": "maneet_chauhan",
         "first_name": "Манит",
         "last_name": "Чаухан",
         "email": "maneet_chauhan@foodgram.com"
     },
     {
-        "id": "8",
         "username": "david_chang",
         "first_name": "Дэвид",
         "last_name": "Чанг",
         "email": "david_chang@foodgram.com"
     },
     {
-        "id": "9",
         "username": "bobby_flay",
         "first_name": "Бобби",
         "last_name": "Флай",
         "email": "bobby_flay@foodgram.com"
     },
     {
-        "id": "10",
         "username": "jamie_oliver",
         "first_name": "Джейми",
         "last_name": "Оливер",

@@ -1,0 +1,82 @@
+[
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Творожная запеканка"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Запеченные яблоки с рикоттой"
+    },
+    {
+        "user_username": "gordon_ramsay",
+        "recipe_name": "Сырники"
+    },
+    {
+        "user_username": "sunny_anderson",
+        "recipe_name": "Морковные котлеты"
+    },
+    {
+        "user_username": "sunny_anderson",
+        "recipe_name": "Банановый ПП-кекс с клюквой"
+    },
+    {
+        "user_username": "marcus_samuelsson",
+        "recipe_name": "Постные медовые кексы"
+    },
+    {
+        "user_username": "marcus_samuelsson",
+        "recipe_name": "Шоколадная гранола"
+    },
+    {
+        "user_username": "marcus_samuelsson",
+        "recipe_name": "Бананы в шоколаде"
+    },
+    {
+        "user_username": "guy_fieri",
+        "recipe_name": "Морковные котлеты"
+    },
+    {
+        "user_username": "guy_fieri",
+        "recipe_name": "Галета с цукини и томатами"
+    },
+    {
+        "user_username": "guy_fieri",
+        "recipe_name": "Шоколадные маршмеллоу"
+    },
+    {
+        "user_username": "cat_cora",
+        "recipe_name": "Творожная запеканка"
+    },
+    {
+        "user_username": "matt_basile",
+        "recipe_name": "Постные медовые кексы"
+    },
+    {
+        "user_username": "maneet_chauhan",
+        "recipe_name": "Сырники"
+    },
+    {
+        "user_username": "maneet_chauhan",
+        "recipe_name": "Бананы в шоколаде"
+    },
+    {
+        "user_username": "david_chang",
+        "recipe_name": "Запеченные яблоки с рикоттой"
+    },
+    {
+        "user_username": "bobby_flay",
+        "recipe_name": "Морковные котлеты"
+    },
+    {
+        "user_username": "bobby_flay",
+        "recipe_name": "Банановый ПП-кекс с клюквой"
+    },
+    {
+        "user_username": "jamie_oliver",
+        "recipe_name": "Шоколадные маршмеллоу"
+    },
+    {
+        "user_username": "jamie_oliver",
+        "recipe_name": "Бананы в шоколаде"
+    }
+]

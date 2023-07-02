@@ -136,3 +136,4 @@ backend/backend_static/
 media/
 *.DS_Store
 data/*.py
+drafts.py

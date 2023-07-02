@@ -1,0 +1,94 @@
+[
+    {
+        "recipe_name": "Морковные котлеты",
+        "tag_slug": "lunch"
+    },
+    {
+        "recipe_name": "Морковные котлеты",
+        "tag_slug": "dinner"
+    },
+    {
+        "recipe_name": "Сырники",
+        "tag_slug": "breakfast"
+    },
+    {
+        "recipe_name": "Сырники",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Творожная запеканка",
+        "tag_slug": "breakfast"
+    },
+    {
+        "recipe_name": "Творожная запеканка",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Галета с цукини и томатами",
+        "tag_slug": "lunch"
+    },
+    {
+        "recipe_name": "Галета с цукини и томатами",
+        "tag_slug": "dinner"
+    },
+    {
+        "recipe_name": "Бананы в шоколаде",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Банановый ПП-кекс с клюквой",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Шоколадная гранола",
+        "tag_slug": "breakfast"
+    },
+    {
+        "recipe_name": "Шоколадная гранола",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Запеченные яблоки с рикоттой",
+        "tag_slug": "breakfast"
+    },
+    {
+        "recipe_name": "Запеченные яблоки с рикоттой",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Шоколадные маршмеллоу",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Постные медовые кексы",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Овсяное печенье с изюмом",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Печенье \"Земелах\"",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "tag_slug": "breakfast"
+    },
+    {
+        "recipe_name": "Овсяный пирог с какао и бананами",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "Пирог \"Сметанник\"",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "ПП брауни",
+        "tag_slug": "dessert"
+    },
+    {
+        "recipe_name": "ПП синнабоны",
+        "tag_slug": "dessert"
+    }
+]
