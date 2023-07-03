@@ -38,6 +38,30 @@ class Tag(models.Model):
         return self.slug[:STR_MAX_LENGTH]
 
 
+class IngredientQuerySet(models.QuerySet):
+    """Дополнительный метод для модели ингредиентов."""
+
+    def order_by_is_startswith_value(self, value):
+        """
+        Сортировка на основе вхождения строки в начало.
+
+        В запросе создается временный булевый столбец (is_startswith),
+        принимающий значение True, если название ингредиента начинается с
+        заданного значения и False в противном случае. Все объекты
+        сортируются по полученному значению (от True к False).
+        """
+        is_startswith_value = models.Case(
+            models.When(name__istartswith=value, then=models.Value(True)),
+            default=models.Value(False),
+        )
+        return self.alias(
+            is_startswith=is_startswith_value,
+        ).order_by(
+            '-is_startswith',
+            models.functions.Lower('name'),
+        )
+
+
 class Ingredient(models.Model):
     """Модель ингредиента."""
 
@@ -47,8 +71,9 @@ class Ingredient(models.Model):
         max_length=200,
     )
 
+    objects = IngredientQuerySet.as_manager()
+
     class Meta:
-        ordering = ['name']
         verbose_name = _('Ингредиент')
         verbose_name_plural = _('Ингредиенты')
         indexes = [
