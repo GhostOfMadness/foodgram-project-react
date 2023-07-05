@@ -5,6 +5,8 @@ from rest_framework import serializers
 
 from django.contrib.auth import get_user_model
 
+from api.v1.utils import is_something_true
+
 
 User = get_user_model()
 
@@ -34,7 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
     """Сериализатор для отображения пользователя."""
 
     is_subscribed = serializers.SerializerMethodField(
-        method_name='get_is_usbscribed',
+        method_name='get_is_subscribed',
     )
 
     class Meta:
@@ -48,22 +50,16 @@ class UserSerializer(serializers.ModelSerializer):
             'is_subscribed',
         )
 
-    def get_is_usbscribed(self, obj: User) -> bool:
+    def get_is_subscribed(self, obj: User) -> bool:
         """
         Проверка статуса подписки.
 
         Возвращает True, если текущий пользователь подписан на автора,
         данные которого представлены в obj.
         """
-        return (
-            self.context.get('request')
-            and hasattr(self.context['request'], 'user')
-            and self.context.get('request').user.is_authenticated
-            and (
-                self.context.get(
-                    'request',
-                ).user.follower.filter(
-                    following=obj,
-                ).exists()
-            )
+        return is_something_true(
+            serializer=self,
+            obj=obj,
+            related_name='follower',
+            field_name='following',
         )

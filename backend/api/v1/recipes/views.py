@@ -1,7 +1,11 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import permissions, viewsets
 
-from recipes.models import Ingredient, Tag
-from .serializers import IngredientSeralizer, TagSeralizer
+from recipes.models import Ingredient, Tag, Recipe
+from .serializers import IngredientSeralizer, TagSeralizer, RecipeSerializer
+from .permissions import IsAuthor
+from api.v1.pagination import PageLimitPagination
+from .filters import RecipeFilterSet
 
 
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
@@ -37,3 +41,21 @@ class IngredientViewSet(viewsets.ReadOnlyModelViewSet):
                 search_value,
             )
         return super().get_queryset()
+
+
+class RecipeViewSet(viewsets.ModelViewSet):
+    """Вьюсет для отображения рецептов."""
+
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+    http_method_names = ('get', 'post', 'patch', 'delete')
+    pagination_class = PageLimitPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = RecipeFilterSet
+
+    def get_permissions(self):
+        if self.request.method == 'POST':
+            return [permissions.IsAuthenticated()]
+        if self.request.method in ['PATCH', 'DELETE']:
+            return [IsAuthor()]
+        return [permissions.AllowAny()]

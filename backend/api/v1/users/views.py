@@ -13,6 +13,7 @@ from rest_framework.viewsets import GenericViewSet
 
 from django.contrib.auth import get_user_model
 
+from api.v1.pagination import PageLimitPagination
 from .serializers import UserCreateSerializer, UserSerializer
 
 
@@ -41,6 +42,7 @@ class UserViewSet(CreateRetrieveListViewSet):
     """
 
     queryset = User.objects.all()
+    pagination_class = PageLimitPagination
 
     def get_permissions(self):
         if self.action in ['retrieve', 'me', 'set_password']:
