@@ -46,6 +46,12 @@ class User(AbstractUser):
         max_length=150,
         help_text=_('Обязательное поле. Не более 150 символов.'),
     )
+    subscriptions = models.ManyToManyField(
+        'self',
+        through='Follow',
+        related_name='user_followers',
+        symmetrical=False,
+    )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']

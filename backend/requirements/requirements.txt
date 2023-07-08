@@ -10,7 +10,7 @@ certifi==2023.5.7
     # via requests
 cffi==1.15.1
     # via cryptography
-charset-normalizer==3.1.0
+charset-normalizer==3.2.0
     # via requests
 cryptography==41.0.1
     # via social-auth-core
@@ -42,6 +42,8 @@ djoser==2.2.0
     # via -r requirements/requirements.in
 drf-extra-fields==3.5.0
     # via -r requirements/requirements.in
+drf-writable-nested==0.7.0
+    # via -r requirements/requirements.in
 filetype==1.2.0
     # via drf-extra-fields
 gunicorn==20.1.0
@@ -53,7 +55,9 @@ oauthlib==3.2.2
     #   requests-oauthlib
     #   social-auth-core
 pillow==9.5.0
-    # via -r requirements/requirements.in
+    # via
+    #   -r requirements/requirements.in
+    #   reportlab
 psycopg2-binary==2.9.6
     # via -r requirements/requirements.in
 pycparser==2.21
@@ -68,6 +72,8 @@ python3-openid==3.2.0
     # via social-auth-core
 pytz==2023.3
     # via djangorestframework
+reportlab==4.0.4
+    # via -r requirements/requirements.in
 requests==2.31.0
     # via
     #   requests-oauthlib

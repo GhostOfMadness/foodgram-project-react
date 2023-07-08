@@ -4,7 +4,15 @@ from dotenv import load_dotenv
 
 from django.contrib import admin
 
-from .models import Ingredient, Recipe, RecipeIngredient, RecipeTag, Tag
+from .models import (
+    FavoritesList,
+    Ingredient,
+    Recipe,
+    RecipeIngredient,
+    RecipeTag,
+    ShoppingCart,
+    Tag,
+)
 
 
 load_dotenv()
@@ -80,3 +88,20 @@ class RecipeAdmin(admin.ModelAdmin):
     def additions_to_favorites_count(self, obj: Recipe) -> int:
         """Сколько раз рецепт был добавлен в избранное."""
         return obj.favoriteslist_related.count()
+
+
+class ListConfig(admin.ModelAdmin):
+    """Конфиг админ-зоны для моделей списков."""
+
+    list_display = ('user', 'recipe')
+    list_filter = ('user', 'recipe')
+
+
+@admin.register(FavoritesList)
+class FavoritesListConfig(ListConfig):
+    """Конфиг админ-зоны для списка избранного."""
+
+
+@admin.register(ShoppingCart)
+class ShoppingCartConfig(ListConfig):
+    """Конфиг админ-зоны для списка покупок."""

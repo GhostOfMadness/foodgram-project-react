@@ -5,7 +5,7 @@ from rest_framework import serializers
 
 from django.contrib.auth import get_user_model
 
-from api.v1.utils import is_something_true
+from api.v1.utils import is_in_user_list
 
 
 User = get_user_model()
@@ -57,7 +57,7 @@ class UserSerializer(serializers.ModelSerializer):
         Возвращает True, если текущий пользователь подписан на автора,
         данные которого представлены в obj.
         """
-        return is_something_true(
+        return is_in_user_list(
             serializer=self,
             obj=obj,
             related_name='follower',

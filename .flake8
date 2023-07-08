@@ -15,7 +15,9 @@ ignore =
     # Missing docstrings
     D100,D101,D102,D103,D104,D105,D106,D107,
     # First line should be in imperative mood
-    D401
+    D401,
+    # Missing explicit return at the end of function
+    R503
 per-file-ignores =
     # Line too long
     */settings.py:E501

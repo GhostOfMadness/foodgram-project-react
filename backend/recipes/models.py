@@ -39,7 +39,7 @@ class Tag(models.Model):
 
 
 class IngredientQuerySet(models.QuerySet):
-    """Дополнительный метод для модели ингредиентов."""
+    """Дополнительный метод для менеджера модели ингредиентов."""
 
     def order_by_is_startswith_value(self, value):
         """
@@ -99,8 +99,8 @@ class Recipe(models.Model):
         related_name='recipes',
         verbose_name=_('Автор'),
     )
-    tag = models.ManyToManyField(Tag, through='RecipeTag')
-    ingredient = models.ManyToManyField(
+    tags = models.ManyToManyField(Tag, through='RecipeTag')
+    ingredients = models.ManyToManyField(
         Ingredient,
         through='RecipeIngredient',
     )
@@ -120,6 +120,16 @@ class Recipe(models.Model):
         ],
     )
     pub_date = models.DateTimeField(_('publication date'), auto_now_add=True)
+    favorites = models.ManyToManyField(
+        User,
+        through='FavoritesList',
+        related_name='favorites_recipes',
+    )
+    shopping_cart = models.ManyToManyField(
+        User,
+        through='ShoppingCart',
+        related_name='shopping_cart_recipes',
+    )
 
     class Meta:
         ordering = ['-pub_date']
@@ -140,13 +150,12 @@ class RecipeIngredient(models.Model):
         Recipe,
         on_delete=models.CASCADE,
         verbose_name=_('Рецепт'),
-        related_name='ingredients',
+        related_name='recipe_ingredients',
     )
     ingredient = models.ForeignKey(
         Ingredient,
         on_delete=models.CASCADE,
         verbose_name=_('Ингредиент'),
-        related_name='recipes',
     )
     amount = models.PositiveSmallIntegerField(
         _('Количество'),
@@ -178,13 +187,11 @@ class RecipeTag(models.Model):
         Recipe,
         on_delete=models.CASCADE,
         verbose_name=_('Рецепт'),
-        related_name='tags',
     )
     tag = models.ForeignKey(
         Tag,
         on_delete=models.CASCADE,
         verbose_name=_('Тег'),
-        related_name='recipes',
     )
 
     class Meta:
@@ -234,13 +241,13 @@ class ShoppingCart(ListModel):
     """Модель списка покупок."""
 
     class Meta(ListModel.Meta):
-        verbose_name = _('Shopping cart')
-        verbose_name_plural = _('Shopping carts')
+        verbose_name = _('Список покупок')
+        verbose_name_plural = _('Списки покупок')
 
 
 class FavoritesList(ListModel):
     """Модель списка избранного."""
 
     class Meta(ListModel.Meta):
-        verbose_name = _('Favorites list')
-        verbose_name_plural = _('Favorites lists')
+        verbose_name = _('Избранное')
+        verbose_name_plural = _('Избранное')
