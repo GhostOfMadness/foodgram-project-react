@@ -7,8 +7,7 @@ from rest_framework import serializers
 from django.forms.models import model_to_dict
 from django.utils.translation import gettext_lazy as _
 
-from api.v1.users.serializers import UserSerializer
-from api.v1.utils import is_in_user_list
+from api.v1.users.serializers import MethodFieldUserSerializer
 from recipes.models import Ingredient, Recipe, RecipeIngredient, Tag
 
 
@@ -70,13 +69,12 @@ class RecipeIngredientSerializer(serializers.ModelSerializer):
 class RecipeSerializer(WritableNestedModelSerializer):
     """Сериализатор для отображения рецепта."""
 
-    author = UserSerializer(many=False, read_only=True)
+    author = MethodFieldUserSerializer(many=False, read_only=True)
     image = Base64ImageField(required=True, allow_null=False)
-    is_favorited = serializers.SerializerMethodField(
-        method_name='is_recipe_in_favorited',
-    )
-    is_in_shopping_cart = serializers.SerializerMethodField(
-        method_name='is_recipe_in_shopping_cart',
+    is_favorited = serializers.BooleanField(read_only=True, default=False)
+    is_in_shopping_cart = serializers.BooleanField(
+        read_only=True,
+        default=False,
     )
     tags = DictPrimaryKeyRelatedField(many=True, queryset=Tag.objects)
     ingredients = RecipeIngredientSerializer(
@@ -137,31 +135,3 @@ class RecipeSerializer(WritableNestedModelSerializer):
         message = _('Тег "%(name)s" уже выбран. Пожалуйста, выберите другой.')
         self._many_to_many_field_validate(data=data, message=message)
         return data
-
-    def is_recipe_in_favorited(self, obj: Recipe) -> bool:
-        """Возвращает True, если рецепт в избранном."""
-        return is_in_user_list(
-            serializer=self,
-            obj=obj,
-            related_name='favoriteslist_related',
-            field_name='recipe',
-        )
-
-    def is_recipe_in_shopping_cart(self, obj: Recipe) -> bool:
-        """Возвращает True, если рецепт в списке покупок."""
-        return is_in_user_list(
-            serializer=self,
-            obj=obj,
-            related_name='shoppingcart_related',
-            field_name='recipe',
-        )
-
-
-class RecipeMinifiedSerializer(serializers.ModelSerializer):
-    """Сокращенное отображение рецепта."""
-
-    image = serializers.URLField(source='image.url')
-
-    class Meta:
-        model = Recipe
-        fields = ('id', 'name', 'image', 'cooking_time')

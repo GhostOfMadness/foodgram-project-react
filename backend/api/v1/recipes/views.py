@@ -8,11 +8,12 @@ from rest_framework.decorators import action
 from rest_framework.request import Request
 from rest_framework.response import Response
 
-from django.db.models import QuerySet, Sum
+from django.db.models import Exists, Model, OuterRef, QuerySet, Sum
 from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
 
-from recipes.models import Ingredient, Recipe, Tag
+from api.v1.users.serializers import RecipeMinifiedSerializer
+from recipes.models import FavoritesList, Ingredient, Recipe, ShoppingCart, Tag
 
 from .filters import RecipeFilterSet
 from .permissions import IsAuthor
@@ -68,13 +69,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
         'destroy',
     )
 
-    queryset = Recipe.objects.select_related(
-        'author',
-    ).prefetch_related(
-        'tags',
-        'ingredients',
-    ).all()
-    serializer_class = RecipeSerializer
     http_method_names = (
         'get',
         'post',
@@ -102,7 +96,20 @@ class RecipeViewSet(viewsets.ModelViewSet):
             ).order_by(
                 'recipe_ingredients__ingredient__name',
             )
-        return super().get_queryset()
+        return Recipe.objects.select_related(
+            'author',
+        ).prefetch_related(
+            'ingredients',
+            'tags',
+        ).annotate(
+            is_favorited=self._is_in_user_list(FavoritesList),
+            is_in_shopping_cart=self._is_in_user_list(ShoppingCart),
+        )
+
+    def get_serializer_class(self):
+        if self.action in ['shopping_cart', 'favorite']:
+            return RecipeMinifiedSerializer
+        return RecipeSerializer
 
     def get_permissions(self):
         if self.action in self.ACTIONS_AUTHENTICATED:
@@ -118,14 +125,14 @@ class RecipeViewSet(viewsets.ModelViewSet):
         self.get_object().recipe_ingredients.all().delete()
         return super().perform_update(serializer)
 
-    def _get_short_recipe(self, recipe: Recipe) -> dict[str, Any]:
-        """Вернуть короткую версию рецепта в виде словаря."""
-        return {
-            'id': recipe.id,
-            'name': recipe.name,
-            'image': recipe.image.url,
-            'cooking_time': recipe.cooking_time,
-        }
+    def _is_in_user_list(self, model: Model) -> Exists:
+        """Возвращает статус нахождения объекта в списке."""
+        return Exists(
+            model.objects.filter(
+                user__id=self.request.user.id,
+                recipe=OuterRef('id'),
+            ),
+        )
 
     def _add_to_list(
         self,
@@ -144,8 +151,9 @@ class RecipeViewSet(viewsets.ModelViewSet):
                 code='already_exist',
             )
         getattr(user, related_name).create(user=user, recipe=recipe)
+        serializer_class = self.get_serializer_class()(recipe, many=False)
         return Response(
-            self._get_short_recipe(recipe),
+            serializer_class.data,
             status=status.HTTP_201_CREATED,
         )
 

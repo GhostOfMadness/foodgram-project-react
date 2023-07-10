@@ -1,5 +1,7 @@
 import django_filters
 
+from django.db.models import Subquery
+
 from recipes.models import Recipe, Tag
 
 
@@ -46,10 +48,9 @@ class RecipeFilterSet(django_filters.FilterSet):
     def _filter_in_list(self, queryset, value, related_name):
         user = self.request.user
         if user.is_authenticated and value == 1:
-            return getattr(user, related_name).select_related(
-                'author',
-            ).prefetch_related(
-                'tags',
-                'ingredients',
-            ).all()
+            return queryset.filter(
+                id__in=Subquery(
+                    getattr(user, related_name).values_list('id', flat=True),
+                ),
+            )
         return queryset

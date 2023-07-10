@@ -6,6 +6,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
 from api.v1.utils import is_in_user_list
+from recipes.models import Recipe
 
 
 User = get_user_model()
@@ -33,11 +34,9 @@ class UserCreateSerializer(DjoserUserCreateSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    """Сериализатор для отображения пользователя."""
+    """Сериализатор для отображения пользователя с аннотацией."""
 
-    is_subscribed = serializers.SerializerMethodField(
-        method_name='get_is_subscribed',
-    )
+    is_subscribed = serializers.BooleanField()
 
     class Meta:
         model = User
@@ -49,6 +48,14 @@ class UserSerializer(serializers.ModelSerializer):
             'last_name',
             'is_subscribed',
         )
+
+
+class MethodFieldUserSerializer(UserSerializer):
+    """Сериализатор для отображения пользователя с methodfield."""
+
+    is_subscribed = serializers.SerializerMethodField(
+        method_name='get_is_subscribed',
+    )
 
     def get_is_subscribed(self, obj: User) -> bool:
         """
@@ -62,4 +69,34 @@ class UserSerializer(serializers.ModelSerializer):
             obj=obj,
             related_name='follower',
             field_name='following',
+        )
+
+
+class RecipeMinifiedSerializer(serializers.ModelSerializer):
+    """Сокращенное отображение рецепта."""
+
+    image = serializers.URLField(source='image.url')
+
+    class Meta:
+        model = Recipe
+        fields = ('id', 'name', 'image', 'cooking_time')
+
+
+class UserSubscribeSerializer(UserSerializer):
+    """Отображение пользователя в подписке."""
+
+    recipes = RecipeMinifiedSerializer(
+        many=True,
+        read_only=True,
+    )
+    recipes_count = serializers.IntegerField()
+    is_subscribed = serializers.BooleanField(read_only=True, default=True)
+
+    class Meta(UserSerializer.Meta):
+        fields = (
+            UserSerializer.Meta.fields
+            + (
+                'recipes',
+                'recipes_count',
+            )
         )
