@@ -19,9 +19,5 @@ ignore =
     # Missing explicit return at the end of function
     R503
 per-file-ignores =
-    # Line too long
-    */settings.py:E501
-    # Double quotes found but single quotes preferred
-    ./manage.py:Q000
     # Variables names that shadow builtins are not allowed
     */serializers.py:VNE003
