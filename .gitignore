@@ -137,4 +137,4 @@ media/
 *.DS_Store
 data/*.py
 drafts.py
-.vscode
+.vscode/

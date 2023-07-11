@@ -1,0 +1,38 @@
+version: '3.3'
+
+volumes:
+  pg_data:
+  static:
+  media:
+
+services:
+  db:
+    image: postgres:13.10-alpine
+    env_file:
+      - .env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  backend:
+    image: madghostnn/foodgram_backend
+    env_file: .env
+    depends_on:
+      - db
+    volumes:
+      - static:/backend_static/
+      - media:/app/media/
+  frontend:
+    image: madghostnn/foodgram_frontend
+    env_file: .env
+    volumes:
+      - static:/app/result_build/build/
+  gateway:
+    image: madghostnn/foodgram_gateway
+    env_file: .env
+    depends_on:
+      - backend
+    ports:
+      - 8000:80
+    volumes:
+      - ./docs/:/usr/share/nginx/html/api/docs/
+      - static:/usr/share/nginx/html/
+      - media:/usr/share/nginx/html/media/

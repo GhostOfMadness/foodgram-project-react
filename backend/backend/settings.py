@@ -10,11 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default='django-secret-key')
 
-# DEBUG = True
-DEBUG = False
+DEBUG = bool(int(os.getenv('DJANGO_DEBUG', default='0')))
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default=[]).split(' ')
 
 # Application definition
 INSTALLED_APPS = [
@@ -65,12 +63,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 # Database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     },
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

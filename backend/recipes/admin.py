@@ -1,8 +1,12 @@
 import os
+from typing import Any
 
 from dotenv import load_dotenv
 
 from django.contrib import admin
+from django.db.models import Count
+from django.db.models.query import QuerySet
+from django.http.request import HttpRequest
 
 from .models import (
     FavoritesList,
@@ -84,10 +88,16 @@ class RecipeAdmin(admin.ModelAdmin):
     readonly_fields = ['additions_to_favorites_count']
     inlines = [RecipeIngredientInline, RecipeTagInline]
 
+    def get_queryset(self, request: HttpRequest) -> QuerySet[Any]:
+        """Для каждого рецепта подсчет числа раз добавления в избранное."""
+        return super().get_queryset(request).annotate(
+            count_favorite=Count('favoriteslist_related'),
+        )
+
     @admin.display(description='В избранном (раз)')
     def additions_to_favorites_count(self, obj: Recipe) -> int:
         """Сколько раз рецепт был добавлен в избранное."""
-        return obj.favoriteslist_related.count()
+        return obj.count_favorite
 
 
 class ListConfig(admin.ModelAdmin):

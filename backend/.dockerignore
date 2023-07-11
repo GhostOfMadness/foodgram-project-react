@@ -2,4 +2,6 @@ venv
 .env
 .git
 .vscode
+db.sqlite3
+drafts.py
 media
