@@ -9,3 +9,10 @@ Foodgram - сервис, позволяющий вам полностью пог
 
 Frontend проекта написан на [React](https://ru.legacy.reactjs.org) (JS), backend - на [Django](https://www.djangoproject.com) (Python).
 При развертывании проекта использован веб-сервер [NGINX](https://nginx.org/ru/), WSGI-сервер [Gunicorn](https://gunicorn.org) и [Docker](https://www.docker.com).
+
+
+## Информация
+
+Адрес проекта: https://ghostofmadnessnn.hopto.org/
+Логин администратора: admin@foodgram.com
+Пароль администратора: admin
