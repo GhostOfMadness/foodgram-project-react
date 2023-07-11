@@ -13,6 +13,6 @@ Frontend проекта написан на [React](https://ru.legacy.reactjs.or
 
 ## Информация
 
-Адрес проекта: https://ghostofmadnessnn.hopto.org/
-Логин администратора: admin@foodgram.com
-Пароль администратора: admin
+* *Адрес проекта*: https://ghostofmadnessnn.hopto.org/
+* *Логин администратора*: admin@foodgram.com
+* *Пароль администратора*: admin
