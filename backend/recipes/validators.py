@@ -5,12 +5,12 @@ from django.utils.translation import gettext_lazy as _
 
 @deconstructible
 class HexColorValidator(RegexValidator):
-    """String is correct HEX-color representation."""
+    """Проверка, что строка представлена в HEX-формате."""
 
     regex = r'^#[0-9A-Fa-f]{3,6}$'
     message = _(
-        'The color value should be a valid HEX-color: '
-        'contains 3 or 6 symbols (except for "#"), '
-        'each symbol is a digit or letter from A (a) to F(f).',
+        'Значение цвета должно быть корректной HEX-строкой: '
+        'содержит 3 или 6 символов (кроме "#"), '
+        'каждый символ является цифрой или буквой от A (a) до F(f).',
     )
     flags = 0

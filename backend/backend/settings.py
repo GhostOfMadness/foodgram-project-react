@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default='django-secret-key')
 
 DEBUG = bool(int(os.getenv('DJANGO_DEBUG', default='0')))
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default=[]).split(' ')
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', default='').split(' ')
 
 # Application definition
 INSTALLED_APPS = [
@@ -139,4 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # User model
 AUTH_USER_MODEL = 'users.User'
 
-CSRF_TRUSTED_ORIGINS = os.getenv('DJANGO_CSRF_TRUSTED_ORIGINS', []).split(' ')
+CSRF_TRUSTED_ORIGINS = os.getenv(
+    'DJANGO_CSRF_TRUSTED_ORIGINS',
+    default='',
+).split(' ')

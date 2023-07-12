@@ -18,6 +18,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Count, Exists, OuterRef, Prefetch, Subquery
 from django.utils.translation import gettext_lazy as _
 
+from api.v1.views import MultiSeralizerViewSetMixin
 from recipes.models import Recipe
 from users.models import Follow
 
@@ -40,7 +41,7 @@ class CreateRetrieveListViewSet(
     """Вьюсет для создания объекта, получения объекта или списка объектов."""
 
 
-class UserViewSet(CreateRetrieveListViewSet):
+class UserViewSet(MultiSeralizerViewSetMixin, CreateRetrieveListViewSet):
     """
     Вьюсет для работы с пользователями.
 
@@ -62,6 +63,14 @@ class UserViewSet(CreateRetrieveListViewSet):
         'subscriptions'
         'subscribe',
     )
+
+    serializer_class = UserSerializer
+    serializer_classes = {
+        'create': UserCreateSerializer,
+        'set_password': DjoserSetPasswordSerializer,
+        'subscriptions': UserSubscribeSerializer,
+        'subscribe': UserSubscribeSerializer,
+    }
 
     def _prefetch_recipes(self) -> Subquery:
         """Подзапрос для извлечения только указанного числа рецептов."""
@@ -108,14 +117,14 @@ class UserViewSet(CreateRetrieveListViewSet):
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
 
-    def get_serializer_class(self):
-        if self.action == 'create':
-            return UserCreateSerializer
-        if self.action == 'set_password':
-            return DjoserSetPasswordSerializer
-        if self.action in ['subscriptions', 'subscribe']:
-            return UserSubscribeSerializer
-        return UserSerializer
+    # def get_serializer_class(self):
+    #     if self.action == 'create':
+    #         return UserCreateSerializer
+    #     if self.action == 'set_password':
+    #         return DjoserSetPasswordSerializer
+    #     if self.action in ['subscriptions', 'subscribe']:
+    #         return UserSubscribeSerializer
+    #     return UserSerializer
 
     def get_instance(self) -> User:
         return self.get_queryset().get(pk=self.request.user.pk)
@@ -136,7 +145,7 @@ class UserViewSet(CreateRetrieveListViewSet):
         self,
         user: User,
         author: User,
-        is_exists: bool,
+        exists: bool,
     ) -> Response:
         """Добавить автора в подписки."""
         if author == user:
@@ -145,7 +154,7 @@ class UserViewSet(CreateRetrieveListViewSet):
                     'errors': _('Вы не можете подписаться на себя.'),
                 },
             )
-        if is_exists:
+        if exists:
             raise serializers.ValidationError(
                 {
                     'errors': _('Вы уже подписаны на этого автора.'),
@@ -163,10 +172,10 @@ class UserViewSet(CreateRetrieveListViewSet):
         self,
         user: User,
         author: User,
-        is_exists: bool,
+        exists: bool,
     ) -> Response:
         """Удалить автора из подписок."""
-        if not is_exists:
+        if not exists:
             raise serializers.ValidationError(
                 {
                     'errors': _('Этого автора нет в подписках.'),
@@ -179,8 +188,8 @@ class UserViewSet(CreateRetrieveListViewSet):
     def subscribe(self, request, *args, **kwargs):
         author = self.get_object()
         user = request.user
-        is_exists = user.follower.filter(following=author).exists()
+        exists = user.follower.filter(following=author).exists()
         if request.method == 'POST':
-            return self._add_to_subscribes(user, author, is_exists)
+            return self._add_to_subscribes(user, author, exists)
         if request.method == 'DELETE':
-            return self._delete_from_subscriptions(user, author, is_exists)
+            return self._delete_from_subscriptions(user, author, exists)
