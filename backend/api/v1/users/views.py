@@ -117,15 +117,6 @@ class UserViewSet(MultiSeralizerViewSetMixin, CreateRetrieveListViewSet):
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
 
-    # def get_serializer_class(self):
-    #     if self.action == 'create':
-    #         return UserCreateSerializer
-    #     if self.action == 'set_password':
-    #         return DjoserSetPasswordSerializer
-    #     if self.action in ['subscriptions', 'subscribe']:
-    #         return UserSubscribeSerializer
-    #     return UserSerializer
-
     def get_instance(self) -> User:
         return self.get_queryset().get(pk=self.request.user.pk)
 

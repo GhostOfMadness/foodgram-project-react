@@ -15,13 +15,19 @@ defusedxml==0.7.1
 django==4.2.2
     # via
     #   -r requirements/requirements.in
+    #   django-admin-autocomplete-filter
     #   django-filter
+    #   django-more-admin-filters
     #   djangorestframework
     #   djangorestframework-simplejwt
     #   djoser
     #   drf-extra-fields
     #   social-auth-app-django
+django-admin-autocomplete-filter==0.7.1
+    # via -r requirements/requirements.in
 django-filter==23.2
+    # via -r requirements/requirements.in
+django-more-admin-filters==1.7
     # via -r requirements/requirements.in
 django-templated-mail==1.1.1
     # via djoser

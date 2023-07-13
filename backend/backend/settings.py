@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'more_admin_filters',
+    'admin_auto_filters',
     'rest_framework',
     'django_filters',
     'rest_framework.authtoken',
@@ -139,6 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # User model
 AUTH_USER_MODEL = 'users.User'
 
+# CSRF
 CSRF_TRUSTED_ORIGINS = os.getenv(
     'DJANGO_CSRF_TRUSTED_ORIGINS',
     default='',

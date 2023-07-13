@@ -8,6 +8,12 @@ from django.db.models import Count
 from django.db.models.query import QuerySet
 from django.http.request import HttpRequest
 
+from .admin_filters import (
+    ListRecipeFilter,
+    ListUserFilter,
+    RecipeAuthorFilter,
+    RecipeTagFilter,
+)
 from .models import (
     FavoritesList,
     Ingredient,
@@ -47,7 +53,9 @@ class TagAdmin(admin.ModelAdmin):
         'color',
         'slug',
     )
+    list_display_links = ('name', 'slug')
     prepopulated_fields = {'slug': ('name',)}
+    search_fields = ('slug',)
 
 
 @admin.register(Ingredient)
@@ -58,7 +66,7 @@ class IngredientAdmin(admin.ModelAdmin):
         'name',
         'measurement_unit',
     )
-    list_filter = ('name',)
+    search_fields = ('name',)
 
 
 @admin.register(Recipe)
@@ -69,7 +77,8 @@ class RecipeAdmin(admin.ModelAdmin):
         'name',
         'author',
     )
-    list_filter = ('name', 'author', 'tags')
+    list_filter = (RecipeAuthorFilter, RecipeTagFilter)
+    search_fields = ('name',)
     fieldsets = [
         (
             None,
@@ -109,7 +118,7 @@ class ListConfig(admin.ModelAdmin):
     """Конфиг админ-зоны для моделей списков."""
 
     list_display = ('user', 'recipe')
-    list_filter = ('user', 'recipe')
+    list_filter = (ListUserFilter, ListRecipeFilter)
 
     def get_queryset(self, request: HttpRequest) -> QuerySet[Any]:
         return super().get_queryset(request).select_related(
